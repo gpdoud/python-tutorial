@@ -9,6 +9,17 @@ userCtrl = UserController()
 # for u in res.data:
 #     print(u.toString())
 
-res = userCtrl.get()
-print(f'http code={res.code}')
-print(res.data.toString())
+from testApiController.user.user import User
+user = User()
+user.id = 7
+user.username = 'zzx'
+user.password = 'zzx'
+user.firstname = 'zzx'
+user.lastname = 'zzx'
+user.phone = 'zzx'
+user.email = 'zzx'
+user.isReviewer = False
+user.isAdmin = False
+jsonuser = user.toJson()
+res = userCtrl.delete(user.id)
+print(f'code={res.code}')

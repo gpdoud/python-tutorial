@@ -1,3 +1,5 @@
+import json
+
 class User:
 
     def __init__(self, user=None):
@@ -21,6 +23,20 @@ class User:
             self.email = user['email']
             self.isReviewer = user['isReviewer']
             self.isAdmin = user['isAdmin']
+
+    def toJson(self):
+        # dict = {}
+        # dict['id']=self.id
+        # dict['username']=self.username
+        # dict['password']=self.password
+        # dict['firstname']=self.firstname
+        # dict['lastname']=self.lastname
+        # dict['phone']=self.phone
+        # dict['email']=self.email
+        # dict['isReviewer']=self.isReviewer
+        # dict['isAdmin']=self.isAdmin
+        data = json.dumps(self.__dict__)
+        return data
 
     def toString(self):
         name = f'{self.firstname} {self.lastname}'
