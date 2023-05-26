@@ -1,13 +1,17 @@
-class Geometry:
-
-    def pi(self):
-        return 3.1415
+class Test:
+    def __init__(self):
+        self.__private = 100
+        self.__priv()
     
-class Circle(Geometry):
+    def debug(self):
+        print(self.__private)
 
-    def area(self, radius):
-        return super().pi() * (radius ** 2)
-    
-circle = Circle()
-area = circle.area(1)
-print(area)
+    def __priv(self):
+        print("priv")
+
+t = Test()
+t.debug()
+t.__private = 200
+t.debug()
+print(t.__private)
+# t._Test__priv()
